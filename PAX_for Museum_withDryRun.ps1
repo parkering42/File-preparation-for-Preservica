@@ -6,11 +6,11 @@ $Rollback = $false  # Change to $true to revert last run
 
 # Define multiple source folders
 $SourceFolders = @(
-    "S:\DAC Projects\CSM Museum and Study Collection\Alan Bartram Photographic Prints\CLR Reorganised\Box 3 North"
+    "C:\Source folder 1"
 )
 
 # Define common destination root
-$DestinationRoot = "S:\DAC Projects\CSM Museum and Study Collection\CLR for upload to preservica\Box 3 North"
+$DestinationRoot = "S:\Destination folder"
 
 # Regex patterns
 $TopLevelFolderPattern = "^[A-Z]{3}\.\d{4}\.\d{1,4}\.[A-Z](\.\d+-\d+)?$"
