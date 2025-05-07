@@ -1,4 +1,4 @@
-# File-preparation-for-Preservica-for TMS records
+# File-preparation-for-Preservica-for digital surrogate assets relating to TMS (The Museum System) records
 # This is a Windows Powershell script for preparing 'multi-representational' assets in a .pax folder format for the Preservica PUT tool. (Multi-part assets to ingest into Digital Preservation software Preservica). In some instances it was a Multi-part and multi-representational object.
 # It is for records from our Museum System, TMS, that cannot be automatically linked to their metadata in Preservica and therefore require a .opex file to be added (but this is done in a separate bit of code at present)
 # It selects jpegs as the "Access Representation" and tiffs as the "Preservation Representation" of a single asset (from a single, or multiple source folders, as defined), where the file names (minus the extension) match, assuming they have already been grouped together into folders per object, with a top-level folder giving the Museum Object reference number. [... note to self...explain this better!]
