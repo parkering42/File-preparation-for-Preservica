@@ -6,7 +6,7 @@ $Rollback = $false  # Change to $true to revert last run
 
 # Define multiple source folders
 $SourceFolders = @(
-    "C:\Source folder 1"
+    "C:\Source folder 1",
 )
 
 # Define common destination root
