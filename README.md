@@ -1,3 +1,7 @@
 # File-preparation-for-Preservica
-# This is a Windows Powershell script for preparing files in a .pax folder format for multi-part assets to ingest into Digital Preservation software Preservica
-# It includes an extra folder "wrapper" for each .pax folder, to facilitate linking the metadata to each object at a level that can also be interpreted by our public front-end platform.
+# This is a Windows Powershell script for preparing 'multi-representational' assets in a .pax folder format for the Preservica PUT tool. (Multi-part assets to ingest into Digital Preservation software Preservica). In some instances it was a Multi-part and multi-representational object.
+# It is for records from our Museum System, that cannot be automatically linked to their metadata in CALM and therefore require a .opex file to be added (but this is done in a separate bit of code at present)
+# It selects jpegs as the "Access Representation" and tiffs as the "Preservation Representation" of a single asset (from a single, or multiple source folders, as defined), where the file names (minus the extension) match, assuming they have already been grouped together into folders per object, with a top-level folder giving the Museum Object reference number. [... note to self...explain this better!]
+# The regex (regular expression) handle the particular naming structure of the file names in this instance, which were based on the Museum Object Reference Numbers
+# After creating the .pax folder structure, it then also includes an extra folder "wrapper" for each .pax folder, to facilitate linking the metadata to each object at a level that can also be interpreted by our public front-end platform, to show each object part within one object together. [explain this better...]
+# I wrote this in dialogue with Chat CPT who also helped me to create a "dry run" mode and a "roll back" mode, to check it was working properly before moving the files into the relevant folder structure.
