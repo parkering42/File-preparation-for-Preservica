@@ -1,0 +1,27 @@
+# Assuming you have exported your .opex files from your legacy database to a folder
+# Define the source folders
+$opexSourceFolder = "C:\Opex Source Folder"  # Folder containing .opex files
+$destinationFolder = "C:\Folder containing your .pax packages"  # Folder containing the top-level .pax folders for each asset
+
+# Get all .opex files from the source folder
+$opexFiles = Get-ChildItem -Path $opexSourceFolder -Filter "*.opex"
+
+# Iterate over each .opex file
+foreach ($opexFile in $opexFiles) {
+    # Extract the file name without the extension
+    $fileNameWithoutExtension = [System.IO.Path]::GetFileNameWithoutExtension($opexFile.Name)
+    
+    # Check if a matching top-level folder exists in the destination folder
+    $matchingFolder = Get-ChildItem -Path $destinationFolder -Directory | Where-Object { $_.Name -eq $fileNameWithoutExtension }
+    
+    if ($matchingFolder) {
+        # Define the destination path for the .opex file
+        $destinationPath = Join-Path -Path $matchingFolder.FullName -ChildPath $opexFile.Name
+        
+        # Move the .opex file to the matching folder
+        Move-Item -Path $opexFile.FullName -Destination $destinationPath
+        Write-Host "Moved '$($opexFile.Name)' to '$destinationPath'"
+    } else {
+        Write-Host "No matching folder found for '$($opexFile.Name)'"
+    }
+}
